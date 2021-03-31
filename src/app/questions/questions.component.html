@@ -1,5 +1,5 @@
 <h2 id="firstHeader">Lets play some Golf!</h2>
-<div class="courseQ">
+<div class="courseQ" *ngIf="!courseID">
   <label for="courses">Choose a course:</label>
   <form>
   <select [(ngModel)]="courseID" name="courses" class="form-control col-6">

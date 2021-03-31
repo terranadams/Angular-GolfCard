@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../../services/courses.service'
 
 
 @Component({
@@ -11,10 +12,11 @@ export class QuestionsComponent implements OnInit {
   courseID: number
 
   selectCourse(): void {
-    console.log(this.courseID)
+    // console.log(this.courseID)
+    
   }
 
-  constructor() { }
+  constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
   }
