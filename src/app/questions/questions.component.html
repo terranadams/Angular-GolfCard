@@ -1,1 +1,12 @@
-<p>questions works!</p>
+<h2 id="firstHeader">Lets play some Golf!</h2>
+<div class="courseQ">
+  <label for="courses">Choose a course:</label>
+  <form>
+  <select [(ngModel)]="courseID" name="courses" class="form-control col-6">
+    <option value="18300">Fox Hollow</option>
+    <option value="11819">Thanksgiving Point</option>
+    <option value="11902">Spanish Oaks</option>
+  </select>
+  <button (click)="selectCourse()">Next</button>
+  </form>
+</div>

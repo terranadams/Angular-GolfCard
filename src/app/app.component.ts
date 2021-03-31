@@ -12,12 +12,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.coursesService.getCourses();
-    this.coursesService.getCourse(18300);
+    //this.coursesService.getCourse(18300);
   }
 
-  // 
-
-  public getValue() {
-    return 'Hello World';
-  }
 }
