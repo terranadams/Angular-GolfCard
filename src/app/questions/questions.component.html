@@ -1,12 +1,35 @@
 <h2 id="firstHeader">Lets play some Golf!</h2>
-<div class="courseQ" *ngIf="!courseID">
-  <label for="courses">Choose a course:</label>
-  <form>
-  <select [(ngModel)]="courseID" name="courses" class="form-control col-6">
-    <option value="18300">Fox Hollow</option>
-    <option value="11819">Thanksgiving Point</option>
-    <option value="11902">Spanish Oaks</option>
-  </select>
-  <button (click)="selectCourse()">Next</button>
-  </form>
+
+<div *ngIf="courseGood">
+  <label>Choose a course:</label>
+    <select [(ngModel)]="courseID" class="form-control col-6">
+      <option value="18300">Fox Hollow</option>
+      <option value="11819">Thanksgiving Point</option>
+      <option value="11902">Spanish Oaks</option>
+    </select>
+    <button (click)="selectCourse()">Next</button>
 </div>
+
+<div *ngIf="playerCountGood">
+  <label>How many players are playing?</label>
+    <select [(ngModel)]="playerCount" class="form-control col-2">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button (click)="numOfPlayers()">Next</button>
+</div>
+
+<div *ngIf="difficultyGood">
+    <label>Select difficulty</label>
+    <select [(ngModel)]="difficulty" class="form-control col-4">
+        <option value="champion">Champion</option>
+        <option value="pro">Pro (Champion if Spanish Oaks)</option>
+        <option value="men">Men</option>
+        <option value="women">Women</option>
+      </select>
+      <button (click)="selectDiff()">Next</button>
+  </div>
+
+  <h1 (click)="start()" *ngIf="begin">LETS GET STARTED</h1>
