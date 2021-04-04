@@ -21,11 +21,7 @@ export class QuestionsComponent implements OnInit {
 
   begin: boolean = false
 
-  arrayMaker(n: number): void {
-    if (this.playerCountArray.length > n) {
-      this.playerCountArray.push(n)
-    } 
-  }
+  
 
   selectCourse(): void {
     this.courseGood = false
@@ -44,8 +40,14 @@ export class QuestionsComponent implements OnInit {
     this.arrayMaker(this.playerCount)
   }
 
+  arrayMaker(n: number): void {
+    if (this.playerCountArray.length > n) {
+      this.playerCountArray.push(n)
+    } 
+  }
+
   console(): void{
-    console.log(this.playerCount, this.playerCount + 2)
+    
   }
 
 
