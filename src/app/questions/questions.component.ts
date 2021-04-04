@@ -9,10 +9,10 @@ import { CoursesService } from '../../services/courses.service'
 })
 export class QuestionsComponent implements OnInit {
 
-  courseGood: boolean = true
-  difficultyGood: boolean = false
-  playerCountGood: boolean = false
-  namesGood: boolean = false
+  courseRender: boolean = true
+  difficultyRender: boolean = false
+  playerCountRender: boolean = false
+  nameAskRender: boolean = false
   
   courseID: string
   playerCount: number
@@ -24,30 +24,31 @@ export class QuestionsComponent implements OnInit {
   
 
   selectCourse(): void {
-    this.courseGood = false
-    this.difficultyGood = true
+    this.courseRender = false
+    this.difficultyRender = true
   }
 
   selectDiff(): void {
-    this.difficultyGood = false
-    this.playerCountGood = true
+    this.difficultyRender = false
+    this.playerCountRender = true
   }
 
   numOfPlayers(): void {
-    this.difficultyGood = false
-    this.namesGood = true
+    this.playerCountRender = false
+    this.difficultyRender = false
+    this.nameAskRender = true
 
     this.arrayMaker(this.playerCount)
   }
 
   arrayMaker(n: number): void {
-    if (this.playerCountArray.length > n) {
+    if (this.playerCountArray.length < n) {
       this.playerCountArray.push(n)
     } 
   }
 
   console(): void{
-    
+
   }
 
 

@@ -1,6 +1,6 @@
 <h2 id="firstHeader">Lets play some Golf!</h2>
 
-<div *ngIf="courseGood">
+<div *ngIf="courseRender">
   <label>Choose a course:</label>
   <select [(ngModel)]="courseID" class="form-control col-6">
     <option value="18300">Fox Hollow</option>
@@ -10,7 +10,7 @@
   <button (click)="selectCourse()">Next</button>
 </div>
 
-<div *ngIf="difficultyGood">
+<div *ngIf="difficultyRender">
   <label>Select difficulty</label>
   <select [(ngModel)]="difficulty" class="form-control col-4">
     <option value="champion">Champion</option>
@@ -21,7 +21,7 @@
   <button (click)="selectDiff()">Next</button>
 </div>
 
-<div *ngIf="playerCountGood">
+<div *ngIf="playerCountRender">
   <label>How many players are playing?</label>
   <select [(ngModel)]="playerCount" class="form-control col-2">
     <option value="1">1</option>
@@ -32,7 +32,7 @@
   <button (click)="numOfPlayers()">Next</button>
 </div>
 
-<div *ngIf="namesGood">
+<div *ngIf="nameAskRender">
   <label>Gimme names:</label>
   <div *ngFor="let i in playerCountArray">
     <input type="text" />
