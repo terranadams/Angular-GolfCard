@@ -17,9 +17,7 @@ export class QuestionsComponent implements OnInit {
   playerCount: number;
   difficulty: string;
   playerCountArray: number[] = [];
-
   begin: boolean = false;
-
   playersArray: Player[] = [
     {
       name: '',
@@ -131,8 +129,14 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
+  playerStart: Player[] = [];
+
   letsPlay(): void {
-    console.log(this.playersArray);
+    this.playerStart = this.playersArray.filter((x) => {
+      return x.name !== '';
+    });
+
+    console.log(this.playerStart);
   }
 
   constructor(private coursesService: CoursesService) {}
