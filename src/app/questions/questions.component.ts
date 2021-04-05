@@ -138,6 +138,7 @@ export class QuestionsComponent implements OnInit {
 
     this.playerStart.forEach(x => {
       if (x.name == '') alert("Please don't leave any inputs blank homie")
+    
       else {
         for (var i = 0; i < this.playerStart.length; i++) 
         {
@@ -169,7 +170,7 @@ export class QuestionsComponent implements OnInit {
 
 
 
-    // console.log(this.playerStart);
+    console.log(this.playerStart);
   }
 
   constructor(private coursesService: CoursesService) {}

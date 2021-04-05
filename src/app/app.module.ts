@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoursesService } from 'src/services/courses.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AlertModule } from './alert';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -18,7 +17,6 @@ import { AngularFireModule } from '@angular/fire';
      FormsModule,
      AngularFireModule.initializeApp(environment.firebase),
      AngularFirestoreModule,
-     AlertModule
   ],
   providers: [CoursesService],
   bootstrap: [AppComponent], 
