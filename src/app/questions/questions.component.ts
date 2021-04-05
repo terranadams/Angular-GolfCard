@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
+import { Player } from '../interfaces/player';
 
 
 
@@ -49,7 +50,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   letsPlay(): void{
-
+    
   }
 
 
