@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../../services/courses.service'
+import { CoursesService } from '../../services/courses.service';
+
 
 
 @Component({
@@ -42,12 +43,12 @@ export class QuestionsComponent implements OnInit {
   }
 
   arrayMaker(n: number): void {
-    if (this.playerCountArray.length < n) {
+    while (this.playerCountArray.length < n) {
       this.playerCountArray.push(n)
     } 
   }
 
-  console(): void{
+  letsPlay(): void{
 
   }
 

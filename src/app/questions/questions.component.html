@@ -34,8 +34,8 @@
 
 <div *ngIf="nameAskRender">
   <label>Gimme names:</label>
-  <div *ngFor="let i in playerCountArray">
+  <div *ngFor="let i of playerCountArray">
     <input type="text" />
   </div>
-  <button (click)="console()">Console</button>
+  <button (click)="letsPlay()">Lets Play!</button>
 </div>
