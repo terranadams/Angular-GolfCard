@@ -131,12 +131,45 @@ export class QuestionsComponent implements OnInit {
 
   playerStart: Player[] = [];
 
-  letsPlay(): void {
+  checkNames(): void {
     this.playerStart = this.playersArray.filter((x) => {
       return x.name !== '';
     });
 
-    console.log(this.playerStart);
+    this.playerStart.forEach(x => {
+      if (x.name == '') alert("Please don't leave any inputs blank homie")
+      else {
+        for (var i = 0; i < this.playerStart.length; i++) 
+        {
+            for (var j = 0; j < this.playerStart.length; j++) 
+            {
+                if (i != j) 
+                {
+                    if (this.playerStart[i].name == this.playerStart[j].name) 
+                    {
+                      alert("Please make sure there are no duplicate names G.")
+                      break;
+                    }
+                }
+            }
+        }
+      }
+    })
+
+    // if (this.playerStart[1]) {
+    //   if (this.playerStart[0].name == this.playerStart[1].name) alert("Please make sure there are no duplicate names G.")
+    // }
+    // else if (this.playerStart[2]) {
+    //   if (this.playerStart[0].name == this.playerStart[2].name || this.playerStart[1].name == this.playerStart[2].name) alert("Please make sure there are no duplicate names G.")
+    // }
+    // else if (this.playerStart[3]) {
+    //   if (this.playerStart[0].name == this.playerStart[3].name || this.playerStart[1].name == this.playerStart[3].name || this.playerStart[2].name == this.playerStart[3].name) alert("Please make sure there are no duplicate names G.")
+    // }
+
+
+
+
+    // console.log(this.playerStart);
   }
 
   constructor(private coursesService: CoursesService) {}
