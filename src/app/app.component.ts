@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit(): void {
-    this.coursesService.getCourses();
+    this.coursesService.getCourse();
     //this.coursesService.getCourse(18300);
   }
 
