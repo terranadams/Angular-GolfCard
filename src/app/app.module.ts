@@ -9,9 +9,13 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { GametimeComponent } from './gametime/gametime.component';
+
+
+
 
 @NgModule({
-  declarations: [AppComponent, QuestionsComponent],
+  declarations: [AppComponent, QuestionsComponent, GametimeComponent],
   imports: [
      BrowserModule, AppRoutingModule, HttpClientModule,
      FormsModule,
