@@ -29,7 +29,7 @@ export class CoursesService {
     }
 
     console.error(errorMessage)
-    return throwError(errorMessage)
+    return throwError(errorMessage) 
   }
 
 
