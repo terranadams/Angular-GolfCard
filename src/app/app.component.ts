@@ -8,10 +8,15 @@ import { CoursesService } from 'src/services/courses.service';
 })
 export class AppComponent {
   title = 'GolfApp';
+
   constructor(private coursesService: CoursesService) {}
+
 
   courseData: any
   errorMessage: any
+
+  
+
 
   ngOnInit(): void {
     // this.coursesService.getCourse('18300').subscribe({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { Player } from '../interfaces/player';
+import { GameData } from '../../services/gameData.service'
 
 @Component({
   selector: 'app-questions',
@@ -148,10 +149,13 @@ export class QuestionsComponent implements OnInit {
   beginGame(): void {
     this.gameObject.course = this.courseID
     this.gameObject.players = this.playerStart
-    console.log(this.gameObject);
+    // console.log(this.gameObject);
+        this.gameData.setGameObject(this.gameObject)
+
   }
 
-  constructor(private coursesService: CoursesService) {}
+  constructor(private gameData: GameData) {
+  }
 
   ngOnInit(): void {}
 }
