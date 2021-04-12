@@ -28,7 +28,7 @@
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
-  <button (click)="formBegin()">Next</button>
+  <button (click)="formSubmit()">Next</button>
 </div>
 </div>
 
@@ -44,7 +44,7 @@
 </div>
 
 <a routerLink="gametime" routerLinkActive="active">
-<button *ngIf="letsPlay" (click)="beginGame()">Let's Begin!</button>
+<button *ngIf="letsPlayButton" (click)="beginGame()">Let's Play!</button>
 </a>  
 
 <router-outlet></router-outlet>

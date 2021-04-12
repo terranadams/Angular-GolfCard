@@ -8,8 +8,8 @@ import { Player } from '../interfaces/player';
   styleUrls: ['./questions.component.css'],
 })
 export class QuestionsComponent implements OnInit {
-  formBegin: boolean = true;
-  letsPlay: boolean = false;
+  form: boolean = true;
+  letsPlayButton: boolean = false;
   gimmenames: boolean = false;
   courseID: string;
   numberOfPlayersSelection: number;
@@ -102,8 +102,9 @@ export class QuestionsComponent implements OnInit {
       hole18: 0,
     },
   ];
+  gameObject: any = {}
 
-  form(): void {
+  formSubmit(): void {
     if (
       this.courseID == '18300' ||
       this.courseID == '11819' ||
@@ -117,8 +118,8 @@ export class QuestionsComponent implements OnInit {
       ) {
         if (this.numberOfPlayersSelection > 0) {
           this.inputMaker(this.numberOfPlayersSelection);
-          this.formBegin = false;
-          console.log(this.playerCountArray);
+          this.form = false;
+          this.gimmenames = true
         }
       }
     }
@@ -133,11 +134,21 @@ export class QuestionsComponent implements OnInit {
   playerStart: Player[] = [];
 
   checkNames(): void {
-    
+    this.playerStart = this.playersArray.filter((x) => {
+      return x.name !== '';
+    });
+    this.letsPlay()
+  }
+
+  letsPlay(): void {
+    this.gimmenames = false;
+    this.letsPlayButton = true;
   }
 
   beginGame(): void {
-    console.log(this.playerStart);
+    this.gameObject.course = this.courseID
+    this.gameObject.players = this.playerStart
+    console.log(this.gameObject);
   }
 
   constructor(private coursesService: CoursesService) {}
