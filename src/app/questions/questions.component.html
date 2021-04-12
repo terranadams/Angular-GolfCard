@@ -1,43 +1,50 @@
 <h2 id="firstHeader">Lets play some Golf!</h2>
 
-<div *ngIf="courseRender">
+<div *ngIf="form">
+<div>
   <label>Choose a course:</label>
-  <select [(ngModel)]="courseID" class="form-control col-6">
+  <select required [(ngModel)]="courseID" class="form-control col-6" [ngModelOptions]="{standalone: true}">
     <option value="18300">Fox Hollow</option>
     <option value="11819">Thanksgiving Point</option>
     <option value="11902">Spanish Oaks</option>
   </select>
-  <button (click)="selectCourse()">Next</button>
 </div>
 
-<div *ngIf="difficultyRender">
+<div>
   <label>Select difficulty</label>
-  <select [(ngModel)]="difficulty" class="form-control col-4">
+  <select required [(ngModel)]="difficulty" class="form-control col-4" [ngModelOptions]="{standalone: true}">
     <option value="champion">Champion</option>
     <option value="pro">Pro (Champion if Spanish Oaks)</option>
     <option value="men">Men</option>
     <option value="women">Women</option>
   </select>
-  <button (click)="selectDiff()">Next</button>
 </div>
 
-<div *ngIf="playerCountRender">
+<div>
   <label>How many players are playing?</label>
-  <select [(ngModel)]="playerCount" class="form-control col-2">
+  <select required [(ngModel)]="numberOfPlayersSelection" class="form-control col-2" [ngModelOptions]="{standalone: true}">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
-  <button (click)="numOfPlayers()">Next</button>
+  <button (click)="formBegin()">Next</button>
+</div>
 </div>
 
-<div *ngIf="nameAskRender">
+
+
+<div *ngIf="gimmenames">
   <label>Gimme names:</label>
   <div *ngFor="let number of playerCountArray; let i = index" [attr.data-index]="i">
     <input type="text" [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
   </div>
-  <a routerLink="gametime" routerLinkActive="active">
-  <button type="submit" (click)="checkNames()">Lets Play!</button></a>
+  
+  <button type="submit" (click)="checkNames()">Everybody ready?</button>
 </div>
+
+<a routerLink="gametime" routerLinkActive="active">
+<button *ngIf="letsPlay" (click)="beginGame()">Let's Begin!</button>
+</a>  
+
 <router-outlet></router-outlet>

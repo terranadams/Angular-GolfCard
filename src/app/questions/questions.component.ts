@@ -8,13 +8,11 @@ import { Player } from '../interfaces/player';
   styleUrls: ['./questions.component.css'],
 })
 export class QuestionsComponent implements OnInit {
-  courseRender: boolean = true;
-  difficultyRender: boolean = false;
-  playerCountRender: boolean = false;
-  nameAskRender: boolean = false;
-
+  formBegin: boolean = true;
+  letsPlay: boolean = false;
+  gimmenames: boolean = false;
   courseID: string;
-  playerCount: number;
+  numberOfPlayersSelection: number;
   difficulty: string;
   playerCountArray: number[] = [];
   begin: boolean = false;
@@ -105,22 +103,25 @@ export class QuestionsComponent implements OnInit {
     },
   ];
 
-  selectCourse(): void {
-    this.courseRender = false;
-    this.difficultyRender = true;
-  }
-
-  selectDiff(): void {
-    this.difficultyRender = false;
-    this.playerCountRender = true;
-  }
-
-  numOfPlayers(): void {
-    this.playerCountRender = false;
-    this.difficultyRender = false;
-    this.nameAskRender = true;
-
-    this.inputMaker(this.playerCount);
+  form(): void {
+    if (
+      this.courseID == '18300' ||
+      this.courseID == '11819' ||
+      this.courseID == '11902'
+    ) {
+      if (
+        this.difficulty == 'champion' ||
+        this.difficulty == 'pro' ||
+        this.difficulty == 'men' ||
+        this.difficulty == 'women'
+      ) {
+        if (this.numberOfPlayersSelection > 0) {
+          this.inputMaker(this.numberOfPlayersSelection);
+          this.formBegin = false;
+          console.log(this.playerCountArray);
+        }
+      }
+    }
   }
 
   inputMaker(n: number): void {
@@ -132,44 +133,10 @@ export class QuestionsComponent implements OnInit {
   playerStart: Player[] = [];
 
   checkNames(): void {
-    this.playerStart = this.playersArray.filter((x) => {
-      return x.name !== '';
-    });
-
-    this.playerStart.forEach(x => {
-      if (x.name == '') alert("Please don't leave any inputs blank homie")
     
-      else {
-        for (var i = 0; i < this.playerStart.length; i++) 
-        {
-            for (var j = 0; j < this.playerStart.length; j++) 
-            {
-                if (i != j) 
-                {
-                    if (this.playerStart[i].name == this.playerStart[j].name) 
-                    {
-                      alert("Please make sure there are no duplicate names G.")
-                      break;
-                    }
-                }
-            }
-        }
-      }
-    })
+  }
 
-    // if (this.playerStart[1]) {
-    //   if (this.playerStart[0].name == this.playerStart[1].name) alert("Please make sure there are no duplicate names G.")
-    // }
-    // else if (this.playerStart[2]) {
-    //   if (this.playerStart[0].name == this.playerStart[2].name || this.playerStart[1].name == this.playerStart[2].name) alert("Please make sure there are no duplicate names G.")
-    // }
-    // else if (this.playerStart[3]) {
-    //   if (this.playerStart[0].name == this.playerStart[3].name || this.playerStart[1].name == this.playerStart[3].name || this.playerStart[2].name == this.playerStart[3].name) alert("Please make sure there are no duplicate names G.")
-    // }
-
-
-
-
+  beginGame(): void {
     console.log(this.playerStart);
   }
 

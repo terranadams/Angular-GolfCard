@@ -14,10 +14,10 @@ export class AppComponent {
   errorMessage: any
 
   ngOnInit(): void {
-    this.coursesService.getCourse('18300').subscribe({
-      next: courseData => this.courseData = courseData,
-      error: err => this.errorMessage = err
-    })
+    // this.coursesService.getCourse('18300').subscribe({
+    //   next: courseData => this.courseData = courseData,
+    //   error: err => this.errorMessage = err
+    // })
   }
 
 }
