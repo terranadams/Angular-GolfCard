@@ -9,7 +9,7 @@
     <option value="11902">Spanish Oaks</option>
   </select>
 </div>
-
+<br>
 <div>
   <label>Select difficulty</label>
   <select required [(ngModel)]="difficulty" class="form-control col-4" [ngModelOptions]="{standalone: true}">
@@ -19,7 +19,7 @@
     <option value="women">Women</option>
   </select>
 </div>
-
+<br>
 <div>
   <label>How many players are playing?</label>
   <select required [(ngModel)]="numberOfPlayersSelection" class="form-control col-2" [ngModelOptions]="{standalone: true}">
@@ -28,7 +28,8 @@
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
-  <button (click)="formSubmit()">Next</button>
+  <br>
+  <button class="btn btn-success" (click)="formSubmit()">Continue</button>
 </div>
 </div>
 
