@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CoursesService } from 'src/services/courses.service';
+import { CoursesService } from 'src/app/services/courses.service';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../../services/courses.service';
 import { Player } from '../interfaces/player';
-import { GameData } from '../../services/gameData.service'
+import { GameService } from '../services/gameData.service'
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-questions',
@@ -103,7 +103,6 @@ export class QuestionsComponent implements OnInit {
       hole18: 0,
     },
   ];
-  gameObject: any = {}
 
   formSubmit(): void {
     if (
@@ -144,18 +143,19 @@ export class QuestionsComponent implements OnInit {
   letsPlay(): void {
     this.gimmenames = false;
     this.letsPlayButton = true;
+    this.gameData.setGameObject({
+      course: this.courseID,
+      players: this.playerStart
+    })
+    
   }
-
+  
+  
   beginGame(): void {
-    this.gameObject.course = this.courseID
-    this.gameObject.players = this.playerStart
-    // console.log(this.gameObject);
-        this.gameData.setGameObject(this.gameObject)
-
   }
 
-  constructor(private gameData: GameData) {
-  }
+
+  constructor(private gameData: GameService) {}
 
   ngOnInit(): void {}
 }

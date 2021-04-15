@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({
     providedIn: 'root',
   })
 
-  export class GameData {
+  export class GameService {
 
-    constructor() {}
+    constructor(private http: HttpClient) {}
 
-    gameObject: any
+    gameObject: any 
 
     getGameObject() {
       return this.gameObject
     }
 
-    setGameObject(x): void {
+    setGameObject(x: any): void {
       this.gameObject = x
     }
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GameData } from 'src/services/gameData.service';
+import { GameService } from '../services/gameData.service';
+import { CoursesService } from '../services/courses.service'
 
 @Component({
   selector: 'app-gametime',
@@ -8,13 +9,14 @@ import { GameData } from 'src/services/gameData.service';
 })
 export class GametimeComponent implements OnInit {
 
-  gameObject: any = {}
+  gameData: any 
+  // courseData: any
 
-  constructor(private gameData: GameData) { }
-
+  constructor(private gameService: GameService) {}
+  
   ngOnInit(): void {
-    this.gameObject = this.gameData.getGameObject()
-    console.log(this.gameObject)
+    this.gameData = this.gameService.getGameObject()
+    console.log(this.gameData)
   }
 
 }
