@@ -9,13 +9,18 @@ import { catchError, tap } from 'rxjs/operators';
 export class CoursesService {
   constructor(private http: HttpClient) {}
 
+  url: string = 'https://golf-courses-api.herokuapp.com/courses/'
+
   getCourse(x: string): Observable<any[]> {
-    return this.http
-      .get<any[]>('https://golf-courses-api.herokuapp.com/courses/' + x)
+    return this.http.get<any[]>(this.url + x)
       .pipe(
         tap((data) => console.log('Data: ', JSON.stringify(data))),
         catchError(this.handleError)
       );
+  }
+
+  fakeCourse(x: string) {
+    return this.url + x
   }
 
   private handleError(err: HttpErrorResponse) {

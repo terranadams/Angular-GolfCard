@@ -10,13 +10,18 @@ import { CoursesService } from '../services/courses.service'
 export class GametimeComponent implements OnInit {
 
   gameData: any 
-  // courseData: any
+  courseData: any
 
-  constructor(private gameService: GameService) {}
+  constructor(
+    private gameService: GameService,
+    private coursesService: CoursesService
+    ) {}
   
   ngOnInit(): void {
     this.gameData = this.gameService.getGameObject()
-    console.log(this.gameData)
+    this.coursesService.getCourse(this.gameService.getGameObject().course).subscribe(x => this.courseData = x)
+    // console.log(this.courseData)
+    // console.log(this.coursesService.fakeCourse(this.gameData.course))
   }
 
 }
