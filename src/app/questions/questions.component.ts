@@ -39,6 +39,9 @@ export class QuestionsComponent implements OnInit {
       hole16: 0,
       hole17: 0,
       hole18: 0,
+      out: 0,
+      in: 0,
+      total: 0
     },
     {
       name: '',
@@ -60,6 +63,9 @@ export class QuestionsComponent implements OnInit {
       hole16: 0,
       hole17: 0,
       hole18: 0,
+      out: 0,
+      in: 0,
+      total: 0
     },
     {
       name: '',
@@ -81,6 +87,9 @@ export class QuestionsComponent implements OnInit {
       hole16: 0,
       hole17: 0,
       hole18: 0,
+      out: 0,
+      in: 0,
+      total: 0
     },
     {
       name: '',
@@ -102,6 +111,9 @@ export class QuestionsComponent implements OnInit {
       hole16: 0,
       hole17: 0,
       hole18: 0,
+      out: 0,
+      in: 0,
+      total: 0
     },
   ];
 

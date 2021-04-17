@@ -18,4 +18,7 @@ export interface Player {
     hole16: number;
     hole17: number;
     hole18: number;
+    out: 0;
+    in: 0;
+    total: 0
   }
