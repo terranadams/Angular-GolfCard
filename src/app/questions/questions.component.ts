@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
   courseID: string;
   numberOfPlayersSelection: number;
   difficulty: string;
+  difficultyNum: number;
   playerCountArray: number[] = [];
   begin: boolean = false;
   playersArray: Player[] = [
@@ -108,14 +109,22 @@ export class QuestionsComponent implements OnInit {
     if (
       this.courseID == '18300' ||
       this.courseID == '11819' ||
-      this.courseID == '11902'
+      this.courseID == '19002'
     ) {
       if (
-        this.difficulty == 'champion' ||
         this.difficulty == 'pro' ||
+        this.difficulty == 'champion' ||
         this.difficulty == 'men' ||
         this.difficulty == 'women'
       ) {
+        if (this.difficulty == 'pro') this.difficultyNum = 0
+        if (this.difficulty == 'champion') this.difficultyNum = 1
+        if (this.difficulty == 'men') this.difficultyNum = 2
+        if (this.difficulty == 'women') this.difficultyNum = 3
+        if (this.difficulty == 'champion' && this.courseID == '19002') this.difficultyNum = 0
+        if (this.difficulty == 'men' && this.courseID == '19002') this.difficultyNum = 1
+        if (this.difficulty == 'women' && this.courseID == '19002') this.difficultyNum = 2
+
         if (this.numberOfPlayersSelection > 0) {
           this.inputMaker(this.numberOfPlayersSelection);
           this.form = false;
@@ -145,6 +154,7 @@ export class QuestionsComponent implements OnInit {
     this.letsPlayButton = true;
     this.gameData.setGameObject({
       course: this.courseID,
+      difficultyNum: this.difficultyNum,
       players: this.playerStart
     })
     

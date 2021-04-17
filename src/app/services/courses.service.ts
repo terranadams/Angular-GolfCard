@@ -14,7 +14,10 @@ export class CoursesService {
   getCourse(x: string): Observable<any[]> {
     return this.http.get<any[]>(this.url + x)
       .pipe(
-        tap((data) => console.log('Data: ', JSON.stringify(data))),
+        tap((data) => {
+        // console.log('Data: ', JSON.stringify(data))
+      }
+        ),
         catchError(this.handleError)
       );
   }

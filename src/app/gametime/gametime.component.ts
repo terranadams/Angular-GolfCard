@@ -11,6 +11,7 @@ export class GametimeComponent implements OnInit {
 
   gameData: any 
   courseData: any
+  difficultyNum: number
 
   constructor(
     private gameService: GameService,
@@ -19,9 +20,10 @@ export class GametimeComponent implements OnInit {
   
   ngOnInit(): void {
     this.gameData = this.gameService.getGameObject()
+    this.difficultyNum = this.gameData.difficultyNum
     this.coursesService.getCourse(this.gameService.getGameObject().course).subscribe(x => this.courseData = x)
-    // console.log(this.courseData)
-    // console.log(this.coursesService.fakeCourse(this.gameData.course))
+
+
   }
 
 }
