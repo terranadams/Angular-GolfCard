@@ -25,7 +25,7 @@ export class GametimeComponent implements OnInit {
     this.coursesService.getCourse(this.gameData.course).subscribe(x => {
       this.courseData = x
       this.dataIn = true;
-      console.log(this.courseData) // so will this
+      // console.log(this.courseData) // so will this
     })
 
 
