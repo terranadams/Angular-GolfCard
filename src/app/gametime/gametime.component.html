@@ -1,7 +1,7 @@
 <h3 id="courseName"></h3>
   <div id="mobile">Mobile users must tilt phone horizontally</div>
 
-  <div id="cardStuff">
+  <!-- <div *ngIf-"dataIn" id="cardStuff">
     <div id="cardStuff1">
       <div class="row">
         <div class="col-1 leftColumn">HOLE</div>
@@ -18,44 +18,44 @@
       </div>
 
       <div class="row">
-        <!-- <div [(ngModel)]='' class="col-1 leftColumn">YARDS</div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards1"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards2"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards3"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards4"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards5"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards6"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards7"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards8"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards9"></div> -->
+        <div class="col-1 leftColumn">YARDS</div>
+        <div [(ngModel)]='courseData.data.holes[0].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[1].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[2].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[3].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[4].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[5].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[6].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[7].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[8].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
 
       <div class="row">
-        <!-- <div [(ngModel)]='' class="col-1 leftColumn">HDCP</div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp1"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp2"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp3"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp4"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp5"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp6"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp7"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp8"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp9"></div> -->
+        <div class="col-1 leftColumn">HDCP</div>
+        <div [(ngModel)]='courseData.data.holes[0].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[1].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[2].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[3].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[4].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[5].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[6].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[7].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[8].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
 
       <div class="row">
-        <!-- <div [(ngModel)]='' class="col-1 leftColumn">PAR</div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par1"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par2"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par3"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par4"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par5"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par6"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par7"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par8"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par9"></div> -->
+        <div class="col-1 leftColumn">PAR</div>
+        <div [(ngModel)]='courseData.data.holes[1].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[2].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[3].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[4].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[5].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[6].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[7].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[8].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[9].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
     </div>
@@ -67,61 +67,61 @@
     <div id="cardStuff2">
       <div class="row">
         <div class="col-1 leftColumn">HOLE</div>
-        <!-- <div [(ngModel)]='' class="col-1 text-center">10</div>
-        <div [(ngModel)]='' class="col-1 text-center">11</div>
-        <div [(ngModel)]='' class="col-1 text-center">12</div>
-        <div [(ngModel)]='' class="col-1 text-center">13</div>
-        <div [(ngModel)]='' class="col-1 text-center">14</div>
-        <div [(ngModel)]='' class="col-1 text-center">15</div>
-        <div [(ngModel)]='' class="col-1 text-center">16</div>
-        <div [(ngModel)]='' class="col-1 text-center">17</div>
-        <div [(ngModel)]='' class="col-1 text-center">18</div>
-        <div [(ngModel)]='' class="col-1 text-center">IN</div> -->
+        <div class="col-1 text-center">10</div>
+        <div class="col-1 text-center">11</div>
+        <div class="col-1 text-center">12</div>
+        <div class="col-1 text-center">13</div>
+        <div class="col-1 text-center">14</div>
+        <div class="col-1 text-center">15</div>
+        <div class="col-1 text-center">16</div>
+        <div class="col-1 text-center">17</div>
+        <div class="col-1 text-center">18</div>
+        <div class="col-1 text-center">IN</div>
       </div>
 
       <div class="row">
         <div class="col-1 leftColumn">YARDS</div>
-        <!-- <div [(ngModel)]='' class="col-1 text-center" id="yards10"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards11"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards12"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards13"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards14"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards15"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards16"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards17"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="yards18"></div> -->
+        <div [(ngModel)]='courseData.data.holes[9].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[10].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[11].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[12].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[13].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[14].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[15].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[16].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[17].teeBoxes[difficultyNum].yards' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
       
       <div class="row">
-        <div class="col-1 leftColumn handicap">HDCP</div>
-        <!-- <div [(ngModel)]='' class="col-1 text-center" id="hdcp10"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp11"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp12"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp13"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp14"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp15"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp16"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp17"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="hdcp18"></div> -->
+        <div class="col-1 leftColumn">HDCP</div>
+        <div [(ngModel)]='courseData.data.holes[9].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[10].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[11].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[12].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[13].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[14].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[15].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[16].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div> 
+        <div [(ngModel)]='courseData.data.holes[17].teeBoxes[difficultyNum].hcp' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
       
       <div class="row" id="parRow">
         <div class="col-1 leftColumn">PAR</div>
-        <!-- <div [(ngModel)]='' class="col-1 text-center" id="par10"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par11"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par12"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par13"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par14"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par15"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par16"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par17"></div>
-        <div [(ngModel)]='' class="col-1 text-center" id="par18"></div> -->
+        <div [(ngModel)]='courseData.data.holes[9].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[10].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[11].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[12].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[13].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[14].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[15].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[16].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
+        <div [(ngModel)]='courseData.data.holes[17].teeBoxes[difficultyNum].par' class="col-1 text-center"></div>
         <div class="col-1 text-center"></div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <div class="row">
     <!-- <div [(ngModel)]='' id="parTotal" class="totals col-3"></div>
