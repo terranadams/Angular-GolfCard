@@ -1,23 +1,77 @@
 export interface Player {
     name: string;
-    hole1: number;
-    hole2: number;
-    hole3: number;
-    hole4: number;
-    hole5: number;
-    hole6: number;
-    hole7: number;
-    hole8: number;
-    hole9: number;
-    hole10: number;
-    hole11: number;
-    hole12: number;
-    hole13: number;
-    hole14: number;
-    hole15: number;
-    hole16: number;
-    hole17: number;
-    hole18: number;
+    hole1: {
+      score: number;
+      tapped: boolean
+    };
+    hole2: {
+      score: number;
+      tapped: boolean
+    };
+    hole3: {
+      score: number;
+      tapped: boolean
+    };
+    hole4: {
+      score: number;
+      tapped: boolean
+    };
+    hole5: {
+      score: number;
+      tapped: boolean
+    };
+    hole6: {
+      score: number;
+      tapped: boolean
+    };
+    hole7: {
+      score: number;
+      tapped: boolean
+    };
+    hole8: {
+      score: number;
+      tapped: boolean
+    };
+    hole9: {
+      score: number;
+      tapped: boolean
+    };
+    hole10: {
+      score: number;
+      tapped: boolean
+    };
+    hole11: {
+      score: number;
+      tapped: boolean
+    };
+    hole12: {
+      score: number;
+      tapped: boolean
+    };
+    hole13: {
+      score: number;
+      tapped: boolean
+    };
+    hole14: {
+      score: number;
+      tapped: boolean
+    };
+    hole15: {
+      score: number;
+      tapped: boolean
+    };
+    hole16: {
+      score: number;
+      tapped: boolean
+    };
+    hole17: {
+      score: number;
+      tapped: boolean
+    };
+    hole18: {
+      score: number;
+      tapped: boolean
+    };
     out: 0;
     in: 0;
     total: 0

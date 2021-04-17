@@ -9,6 +9,8 @@ import { CoursesService } from '../services/courses.service'
 })
 export class GametimeComponent implements OnInit {
 
+  ticker: number = 0;
+
   yardsTotal = 0
   handicapTotal = 0
   parTotal = 0
@@ -21,15 +23,20 @@ export class GametimeComponent implements OnInit {
   add(): void {
     this.gameData.players.foreach(x => {
       for(let i = 1; i <= 10; i++) {
+        if(x[i].tapped == false) {this.ticker++; x[i].tapped = true;}
+        
         this.gameData.players[x].out = 0
-        this.gameData.players[x].out += this.gameData.players[i]
+        this.gameData.players[x].out += this.gameData.players[i].score
       }
       for(let i = 11; i <= 19; i++) {
+        if(x[i].tapped == false) {this.ticker++; x[i].tapped = true;}
         this.gameData.players[x].in = 0
-        this.gameData.players[x].in += this.gameData.players[i]
+        this.gameData.players[x].in += this.gameData.players[i].score
       }
       this.gameData.players[x].total = 0 
       this.gameData.players[x].total = this.gameData.players[x].in + this.gameData.players[x].out
+
+
     })
 
   }

@@ -21,96 +21,312 @@ export class QuestionsComponent implements OnInit {
   playersArray: Player[] = [
     {
       name: '',
-      hole1: 0,
-      hole2: 0,
-      hole3: 0,
-      hole4: 0,
-      hole5: 0,
-      hole6: 0,
-      hole7: 0,
-      hole8: 0,
-      hole9: 0,
-      hole10: 0,
-      hole11: 0,
-      hole12: 0,
-      hole13: 0,
-      hole14: 0,
-      hole15: 0,
-      hole16: 0,
-      hole17: 0,
-      hole18: 0,
+      hole1: {
+        score: 0,
+        tapped: false
+      },
+      hole2: {
+        score: 0,
+        tapped: false
+      },
+      hole3: {
+        score: 0,
+        tapped: false
+      },
+      hole4: {
+        score: 0,
+        tapped: false
+      },
+      hole5: {
+        score: 0,
+        tapped: false
+      },
+      hole6: {
+        score: 0,
+        tapped: false
+      },
+      hole7: {
+        score: 0,
+        tapped: false
+      },
+      hole8: {
+        score: 0,
+        tapped: false
+      },
+      hole9: {
+        score: 0,
+        tapped: false
+      },
+      hole10: {
+        score: 0,
+        tapped: false
+      },
+      hole11: {
+        score: 0,
+        tapped: false
+      },
+      hole12: {
+        score: 0,
+        tapped: false
+      },
+      hole13: {
+        score: 0,
+        tapped: false
+      },
+      hole14: {
+        score: 0,
+        tapped: false
+      },
+      hole15: {
+        score: 0,
+        tapped: false
+      },
+      hole16: {
+        score: 0,
+        tapped: false
+      },
+      hole17: {
+        score: 0,
+        tapped: false
+      },
+      hole18: {
+        score: 0,
+        tapped: false
+      },
       out: 0,
       in: 0,
       total: 0
     },
     {
       name: '',
-      hole1: 0,
-      hole2: 0,
-      hole3: 0,
-      hole4: 0,
-      hole5: 0,
-      hole6: 0,
-      hole7: 0,
-      hole8: 0,
-      hole9: 0,
-      hole10: 0,
-      hole11: 0,
-      hole12: 0,
-      hole13: 0,
-      hole14: 0,
-      hole15: 0,
-      hole16: 0,
-      hole17: 0,
-      hole18: 0,
+      hole1: {
+        score: 0,
+        tapped: false
+      },
+      hole2: {
+        score: 0,
+        tapped: false
+      },
+      hole3: {
+        score: 0,
+        tapped: false
+      },
+      hole4: {
+        score: 0,
+        tapped: false
+      },
+      hole5: {
+        score: 0,
+        tapped: false
+      },
+      hole6: {
+        score: 0,
+        tapped: false
+      },
+      hole7: {
+        score: 0,
+        tapped: false
+      },
+      hole8: {
+        score: 0,
+        tapped: false
+      },
+      hole9: {
+        score: 0,
+        tapped: false
+      },
+      hole10: {
+        score: 0,
+        tapped: false
+      },
+      hole11: {
+        score: 0,
+        tapped: false
+      },
+      hole12: {
+        score: 0,
+        tapped: false
+      },
+      hole13: {
+        score: 0,
+        tapped: false
+      },
+      hole14: {
+        score: 0,
+        tapped: false
+      },
+      hole15: {
+        score: 0,
+        tapped: false
+      },
+      hole16: {
+        score: 0,
+        tapped: false
+      },
+      hole17: {
+        score: 0,
+        tapped: false
+      },
+      hole18: {
+        score: 0,
+        tapped: false
+      },
       out: 0,
       in: 0,
       total: 0
     },
     {
       name: '',
-      hole1: 0,
-      hole2: 0,
-      hole3: 0,
-      hole4: 0,
-      hole5: 0,
-      hole6: 0,
-      hole7: 0,
-      hole8: 0,
-      hole9: 0,
-      hole10: 0,
-      hole11: 0,
-      hole12: 0,
-      hole13: 0,
-      hole14: 0,
-      hole15: 0,
-      hole16: 0,
-      hole17: 0,
-      hole18: 0,
+      hole1: {
+        score: 0,
+        tapped: false
+      },
+      hole2: {
+        score: 0,
+        tapped: false
+      },
+      hole3: {
+        score: 0,
+        tapped: false
+      },
+      hole4: {
+        score: 0,
+        tapped: false
+      },
+      hole5: {
+        score: 0,
+        tapped: false
+      },
+      hole6: {
+        score: 0,
+        tapped: false
+      },
+      hole7: {
+        score: 0,
+        tapped: false
+      },
+      hole8: {
+        score: 0,
+        tapped: false
+      },
+      hole9: {
+        score: 0,
+        tapped: false
+      },
+      hole10: {
+        score: 0,
+        tapped: false
+      },
+      hole11: {
+        score: 0,
+        tapped: false
+      },
+      hole12: {
+        score: 0,
+        tapped: false
+      },
+      hole13: {
+        score: 0,
+        tapped: false
+      },
+      hole14: {
+        score: 0,
+        tapped: false
+      },
+      hole15: {
+        score: 0,
+        tapped: false
+      },
+      hole16: {
+        score: 0,
+        tapped: false
+      },
+      hole17: {
+        score: 0,
+        tapped: false
+      },
+      hole18: {
+        score: 0,
+        tapped: false
+      },
       out: 0,
       in: 0,
       total: 0
     },
     {
       name: '',
-      hole1: 0,
-      hole2: 0,
-      hole3: 0,
-      hole4: 0,
-      hole5: 0,
-      hole6: 0,
-      hole7: 0,
-      hole8: 0,
-      hole9: 0,
-      hole10: 0,
-      hole11: 0,
-      hole12: 0,
-      hole13: 0,
-      hole14: 0,
-      hole15: 0,
-      hole16: 0,
-      hole17: 0,
-      hole18: 0,
+      hole1: {
+        score: 0,
+        tapped: false
+      },
+      hole2: {
+        score: 0,
+        tapped: false
+      },
+      hole3: {
+        score: 0,
+        tapped: false
+      },
+      hole4: {
+        score: 0,
+        tapped: false
+      },
+      hole5: {
+        score: 0,
+        tapped: false
+      },
+      hole6: {
+        score: 0,
+        tapped: false
+      },
+      hole7: {
+        score: 0,
+        tapped: false
+      },
+      hole8: {
+        score: 0,
+        tapped: false
+      },
+      hole9: {
+        score: 0,
+        tapped: false
+      },
+      hole10: {
+        score: 0,
+        tapped: false
+      },
+      hole11: {
+        score: 0,
+        tapped: false
+      },
+      hole12: {
+        score: 0,
+        tapped: false
+      },
+      hole13: {
+        score: 0,
+        tapped: false
+      },
+      hole14: {
+        score: 0,
+        tapped: false
+      },
+      hole15: {
+        score: 0,
+        tapped: false
+      },
+      hole16: {
+        score: 0,
+        tapped: false
+      },
+      hole17: {
+        score: 0,
+        tapped: false
+      },
+      hole18: {
+        score: 0,
+        tapped: false
+      },
       out: 0,
       in: 0,
       total: 0
