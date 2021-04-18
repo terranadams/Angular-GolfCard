@@ -10,6 +10,7 @@ import { CoursesService } from '../services/courses.service';
 })
 export class QuestionsComponent implements OnInit {
   form: boolean = true;
+  duplicateNames: boolean = false;
   letsPlayButton: boolean = false;
   gimmenames: boolean = false;
   courseID: string;
@@ -378,23 +379,23 @@ export class QuestionsComponent implements OnInit {
     });
 
     if(this.playerStart.length == 1) this.letsPlay()
-    else if(this.playerStart.length == 2) {
+    if(this.playerStart.length == 2) {
       if(this.playerStart[0].name != this.playerStart[1].name) this.letsPlay()
     }
-    else if(this.playerStart.length == 3) {
+    if(this.playerStart.length == 3) {
       if(this.playerStart[0].name != this.playerStart[1].name &&
         this.playerStart[0].name != this.playerStart[2].name && 
         this.playerStart[1].name != this.playerStart[2].name) this.letsPlay()
     }
-    else if(this.playerStart.length == 4) {
+    if(this.playerStart.length == 4) {
       if(this.playerStart[0].name != this.playerStart[1].name &&
         this.playerStart[0].name != this.playerStart[2].name && 
         this.playerStart[0].name != this.playerStart[3].name &&
         this.playerStart[1].name != this.playerStart[2].name &&
         this.playerStart[1].name != this.playerStart[3].name &&
         this.playerStart[2].name != this.playerStart[3].name) this.letsPlay()
-    } else {
-      alert("Make sure there are no duplicate names homie.")
+    } else { 
+      this.duplicateNames = true;
       this.playersArray.forEach(x => {
         x.name = ''
       })
