@@ -37,7 +37,7 @@
 <div *ngIf="gimmenames">
   <label>Gimme names:</label>
   <div *ngFor="let number of playerCountArray; let i = index" [attr.data-index]="i">
-    <input type="text" [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
+    <input type="text" required [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
   </div>
   
   <button type="submit" (click)="checkNames()">Everybody ready?</button>
