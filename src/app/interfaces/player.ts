@@ -72,7 +72,8 @@ export interface Player {
       score: number;
       tapped: boolean
     };
-    out: 0;
-    in: 0;
-    total: 0
+    out: number;
+    in: number;
+    total: number;
+    message: string;
   }

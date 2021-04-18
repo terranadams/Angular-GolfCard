@@ -129,7 +129,7 @@
       </div>
 </div>
 
-<hr />
+<hr/>
 
 <div *ngIf="dataIn" id="cardStuff2">
   <div class="row">
@@ -259,10 +259,16 @@
       </div>
 </div>
 
-<!-- <div class="row">
-    <div [(ngModel)]='' id="parTotal" class="totals col-3"></div>
-    <div [(ngModel)]='' id="yardsTotal" class="totals col-3"></div>
-    <div [(ngModel)]='' id="handicapTotal" class="totals col-3"></div>
-</div> -->
+<div class="row">
+    <div class="totals col-3">Par Total: {{parTotal}}</div>
+    <div class="totals col-3">Yards Total: {{yardsTotal}}</div>
+    <div class="totals col-3">HDCP Total: {{handicapTotal}}</div>
+</div>
 
-<!-- <div id="playerTotals" class="row totals"></div> -->
+<div *ngIf="gameOver" class="row totals">
+  <div *ngFor="let player of gameData.players">
+    <div id="player${i}total" class="col-3">{{player.name}}</div>
+    <div id="player${i}final" class="col-3">Final Score:</div>
+    <div id="player${i}finalmessage" class="col-6">{{player.message}}</div>
+  </div>
+</div>

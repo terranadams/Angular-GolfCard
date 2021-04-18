@@ -95,7 +95,8 @@ export class QuestionsComponent implements OnInit {
       },
       out: 0,
       in: 0,
-      total: 0
+      total: 0,
+      message: ''
     },
     {
       name: '',
@@ -173,7 +174,8 @@ export class QuestionsComponent implements OnInit {
       },
       out: 0,
       in: 0,
-      total: 0
+      total: 0,
+      message: ''
     },
     {
       name: '',
@@ -251,7 +253,8 @@ export class QuestionsComponent implements OnInit {
       },
       out: 0,
       in: 0,
-      total: 0
+      total: 0,
+      message: ''
     },
     {
       name: '',
@@ -329,7 +332,8 @@ export class QuestionsComponent implements OnInit {
       },
       out: 0,
       in: 0,
-      total: 0
+      total: 0,
+      message: ''
     },
   ];
 
@@ -350,8 +354,6 @@ export class QuestionsComponent implements OnInit {
         if (this.difficulty == 'men') this.difficultyNum = 2
         if (this.difficulty == 'women') this.difficultyNum = 3
         if (this.difficulty == 'champion' && this.courseID == '19002') this.difficultyNum = 0
-        if (this.difficulty == 'men' && this.courseID == '19002') this.difficultyNum = 1
-        if (this.difficulty == 'women' && this.courseID == '19002') this.difficultyNum = 2
 
         if (this.numberOfPlayersSelection > 0) {
           this.inputMaker(this.numberOfPlayersSelection);
