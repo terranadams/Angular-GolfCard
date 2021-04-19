@@ -9,7 +9,7 @@ import { CoursesService } from '../services/courses.service';
 })
 export class GametimeComponent implements OnInit {
   ticker: number = 0;
-  gameOver: boolean = false
+  gameOver: boolean = false;
 
   yardsTotal = 0;
   handicapTotal = 0;
@@ -21,27 +21,27 @@ export class GametimeComponent implements OnInit {
   dataIn: boolean = false;
 
   add(): void {
-    this.gameData.players.foreach((x) => {
-      for (let i = 1; i <= 10; i++) {
+    this.gameData.players.holes.forEach((x) => {
+      for (let i = 0; i < 9; i++) {
         if (x[i].tapped == false) {
           this.ticker++;
           x[i].tapped = true;
         }
 
         this.gameData.players[x].out = 0;
-        this.gameData.players[x].out += this.gameData.players[i].score;
+        this.gameData.players[x].out += this.gameData.players.holes[i].score;
       }
-      for (let i = 11; i <= 19; i++) {
+      for (let i = 10; i < 18; i++) {
         if (x[i].tapped == false) {
           this.ticker++;
           x[i].tapped = true;
         }
         this.gameData.players[x].in = 0;
-        this.gameData.players[x].in += this.gameData.players[i].score;
+        this.gameData.players[x].in += this.gameData.players.holes[i].score;
       }
       this.gameData.players[x].total = 0;
       this.gameData.players[x].total =
-        this.gameData.players[x].in + this.gameData.players[x].out;
+        this.gameData.players[x].in + this.gameData.players.holes[x].out;
     });
 
     if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame();
@@ -55,9 +55,9 @@ export class GametimeComponent implements OnInit {
       if (player.total > this.parTotal) {
         player.message = 'Better luck next time!';
       } else if (player.total == this.parTotal) {
-        player.message = 'Right on Par!'
+        player.message = 'Right on Par!';
       } else {
-        player.message = 'Better luck next time!'
+        player.message = 'Better luck next time!';
       }
     });
   }
@@ -69,18 +69,16 @@ export class GametimeComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameData = this.gameService.getGameObject();
-    console.log(this.gameData)
+    console.log(this.gameData);
     this.difficultyNum = this.gameData.difficultyNum;
-    this.coursesService.getCourse(this.gameData.course).subscribe(x => {
+    this.coursesService.getCourse(this.gameData.course).subscribe((x) => {
       this.courseData = x;
       this.dataIn = true;
-      console.log(this.difficultyNum)
-      // console.log(this.courseData.data.holes)
-      this.courseData.data.holes.forEach(x => {
-        this.parTotal+= x.teeBoxes[this.difficultyNum].par
-        this.yardsTotal+= x.teeBoxes[this.difficultyNum].yards
-        this.handicapTotal+= x.teeBoxes[this.difficultyNum].hcp
-      })
+      this.courseData.data.holes.forEach((x) => {
+        this.parTotal += x.teeBoxes[this.difficultyNum].par;
+        this.yardsTotal += x.teeBoxes[this.difficultyNum].yards;
+        this.handicapTotal += x.teeBoxes[this.difficultyNum].hcp;
+      });
     });
   }
 }
