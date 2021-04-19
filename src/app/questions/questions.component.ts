@@ -340,9 +340,7 @@ export class QuestionsComponent implements OnInit {
 
   formSubmit(): void {
     if (
-      this.courseID == '18300' ||
-      this.courseID == '11819' ||
-      this.courseID == '19002'
+      this.courseID != ''
     ) {
       if (
         this.difficulty == 'pro' ||
@@ -396,14 +394,10 @@ export class QuestionsComponent implements OnInit {
         this.playerStart[2].name != this.playerStart[3].name) this.letsPlay()
     } else { 
       this.duplicateNames = true;
-      this.playersArray.forEach(x => {
-        x.name = ''
-      })
       this.playerStart = []
     }
 
 
-    // this.letsPlay()
   }
 
   letsPlay(): void {

@@ -69,6 +69,7 @@ export class GametimeComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameData = this.gameService.getGameObject();
+    console.log(this.gameData)
     this.difficultyNum = this.gameData.difficultyNum;
     this.coursesService.getCourse(this.gameData.course).subscribe(x => {
       this.courseData = x;
