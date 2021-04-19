@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/gameData.service';
 import { CoursesService } from '../services/courses.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-gametime',
@@ -19,6 +20,10 @@ export class GametimeComponent implements OnInit {
   courseData: any;
   difficultyNum: number;
   dataIn: boolean = false;
+
+  saveToFire(gameData: any) {
+    this.db.collection('games-played').add(gameData);
+}
 
   add(): void {
     this.gameData.players.holes.forEach((x) => {
@@ -51,6 +56,8 @@ export class GametimeComponent implements OnInit {
   }
 
   endGame(): void {
+    this.gameOver = true
+
     this.gameData.players.foreach((player) => {
       if (player.total > this.parTotal) {
         player.message = 'Better luck next time!';
@@ -62,9 +69,14 @@ export class GametimeComponent implements OnInit {
     });
   }
 
+  finishGame(): void {
+    this.saveToFire(this.gameData)
+  }
+
   constructor(
     private gameService: GameService,
-    private coursesService: CoursesService
+    private coursesService: CoursesService,
+    private db: AngularFirestore
   ) {}
 
   ngOnInit(): void {

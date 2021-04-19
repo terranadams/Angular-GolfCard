@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-
 @Injectable({
     providedIn: 'root',
   })
@@ -18,4 +17,7 @@ import { HttpClient } from '@angular/common/http'
     setGameObject(x: any): void {
       this.gameObject = x
     }
+
+    
+  
   }
