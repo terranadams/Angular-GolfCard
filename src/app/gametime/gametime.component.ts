@@ -11,6 +11,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class GametimeComponent implements OnInit {
   ticker: number = 0;
   gameOver: boolean = false;
+  saveComplete: boolean = false;
 
   yardsTotal = 0;
   handicapTotal = 0;
@@ -71,6 +72,7 @@ export class GametimeComponent implements OnInit {
 
   finishGame(): void {
     this.saveToFire(this.gameData)
+    this.saveComplete = true;
   }
 
   constructor(
