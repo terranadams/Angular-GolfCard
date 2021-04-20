@@ -34,9 +34,8 @@ export class GametimeComponent implements OnInit {
           this.ticker++;
           x[i].tapped = true;
         }
-
-        this.gameData.players[x].out = 0;
-        this.gameData.players[x].out += this.gameData.players.holes[i].score;
+        x.out = 0;
+        x.out += this.gameData.players.holes[i].score;
       }
 
       for (let i = 10; i < 18; i++) {
@@ -44,12 +43,12 @@ export class GametimeComponent implements OnInit {
           this.ticker++;
           x[i].tapped = true;
         }
-        this.gameData.players[x].in = 0;
-        this.gameData.players[x].in += this.gameData.players.holes[i].score;
+        x.in = 0;
+        x.in += this.gameData.players.holes[i].score;
       }
 
       this.gameData.players[x].total = 0;
-      this.gameData.players[x].total = this.gameData.players[x].in + this.gameData.players.holes[x].out;
+      this.gameData.players[x].total = this.gameData.players[x].in + this.gameData.players[x].out;
     });
 
     if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
