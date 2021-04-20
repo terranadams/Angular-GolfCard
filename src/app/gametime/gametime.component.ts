@@ -26,7 +26,8 @@ export class GametimeComponent implements OnInit {
     this.db.collection('games-played').add(gameData);
 }
 
-  add(): void {
+  add(): void { // This function runs every time an input is added. It runs the math for the totals and checks 
+    // if every input has been filled before displaying the 'finish game' button.
     this.gameData.players.forEach((x) => {
       for (let i = 0; i < 9; i++) {
         if (x.holes[i].tapped == false) {
@@ -51,13 +52,13 @@ export class GametimeComponent implements OnInit {
       this.gameData.players[x].total = this.gameData.players[x].in + this.gameData.players.holes[x].out;
     });
 
-    if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame();
+    if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
     if (this.gameData.players.length == 2 && this.ticker == 36) this.endGame();
     if (this.gameData.players.length == 3 && this.ticker == 54) this.endGame();
     if (this.gameData.players.length == 4 && this.ticker == 72) this.endGame();
   }
 
-  endGame(): void {
+  endGame(): void { // This function displays the scores when the finishGame() button gets rendered after all the inputs are filled
     this.gameOver = true
 
     this.gameData.players.foreach((player) => {
