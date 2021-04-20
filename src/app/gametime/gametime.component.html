@@ -265,7 +265,7 @@
     <div class="totals col-3">HDCP Total: {{handicapTotal}}</div>
 </div>
 
-<div *ngIf="gameOver !saveComplete"class="row totals">
+<div *ngIf="gameOver !saveComplete" class="row totals">
   <div *ngFor="let player of gameData.players">
     <div id="player${i}total" class="col-3">{{player.name}}</div>
     <div id="player${i}final" class="col-3">Final Score:</div>
