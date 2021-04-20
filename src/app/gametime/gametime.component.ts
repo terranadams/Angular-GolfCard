@@ -32,7 +32,7 @@ export class GametimeComponent implements OnInit {
       for (let i = 0; i < 9; i++) {
         if (x.holes[i].tapped == false) {
           this.ticker++;
-          x[i].tapped = true;
+          x.holes[i].tapped = true;
         }
         x.out = 0;
         x.out += this.gameData.players.holes[i].score;
@@ -41,7 +41,7 @@ export class GametimeComponent implements OnInit {
       for (let i = 10; i < 18; i++) {
         if (x.holes[i].tapped == false) {
           this.ticker++;
-          x[i].tapped = true;
+          x.holes[i].tapped = true;
         }
         x.in = 0;
         x.in += this.gameData.players.holes[i].score;
