@@ -17,7 +17,4 @@ import { HttpClient } from '@angular/common/http'
     setGameObject(x: any): void {
       this.gameObject = x
     }
-
-    
-  
   }

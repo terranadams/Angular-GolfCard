@@ -24,31 +24,66 @@ export class GametimeComponent implements OnInit {
 
   saveToFire(gameData: any) {
     this.db.collection('games-played').add(gameData);
-}
+  }
+
+  // This function runs every time an input is changed. It runs the math for the totals and checks 
+  // if every input has been filled before displaying the 'finish game' button.
+  calculateOut(player): void {
+    player.out = 0;
+    for (let i = 0; i < 9; i++) {
+      if (player.holes[i].tapped == false) {
+        this.ticker++;
+        player.holes[i].tapped = true;
+      }
+      player.out += player.holes[i].score;
+    }
+    if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
+    if (this.gameData.players.length == 2 && this.ticker == 36) this.endGame();
+    if (this.gameData.players.length == 3 && this.ticker == 54) this.endGame();
+    if (this.gameData.players.length == 4 && this.ticker == 72) this.endGame();
+  }
+
+  // This function runs every time an input is changed. It runs the math for the totals and checks 
+  // if every input has been filled before displaying the 'finish game' button.
+  calculateIn(player): void {
+    player.in = 0;
+    for (let i = 9; i < 18; i++) {
+      if (player.holes[i].tapped == false) {
+        this.ticker++;
+        player.holes[i].tapped = true;
+      }
+      player.in += player.holes[i].score;
+    }
+    if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
+    if (this.gameData.players.length == 2 && this.ticker == 36) this.endGame();
+    if (this.gameData.players.length == 3 && this.ticker == 54) this.endGame();
+    if (this.gameData.players.length == 4 && this.ticker == 72) this.endGame();
+  }
 
   add(): void { // This function runs every time an input is added. It runs the math for the totals and checks 
     // if every input has been filled before displaying the 'finish game' button.
-    this.gameData.players.forEach((x) => {
+    this.gameData.players.forEach((player, idx) => {
       for (let i = 0; i < 9; i++) {
-        if (x.holes[i].tapped == false) {
+        if (player.holes[i].tapped == false) {
           this.ticker++;
-          x.holes[i].tapped = true;
+          player.holes[i].tapped = true;
         }
-        x.out = 0;
-        x.out += this.gameData.players.holes[i].score;
+        
+        player.out = 0;
+        player.out += player.holes[i].score;
       }
 
       for (let i = 10; i < 18; i++) {
-        if (x.holes[i].tapped == false) {
+        if (player.holes[i].tapped == false) {
           this.ticker++;
-          x.holes[i].tapped = true;
+          player.holes[i].tapped = true;
         }
-        x.in = 0;
-        x.in += this.gameData.players.holes[i].score;
+        player.in = 0;
+        player.in += player.holes[i].score;
       }
 
-      this.gameData.players[x].total = 0;
-      this.gameData.players[x].total = this.gameData.players[x].in + this.gameData.players[x].out;
+      this.gameData.players[idx].total = 0;
+      this.gameData.players[idx].total = this.gameData.players[idx].in + this.gameData.players[idx].out;
     });
 
     if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.

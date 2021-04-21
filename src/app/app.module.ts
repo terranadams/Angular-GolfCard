@@ -10,6 +10,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { GametimeComponent } from './gametime/gametime.component';
+import { GameService } from './services/gameData.service'
 
 
 
@@ -22,7 +23,7 @@ import { GametimeComponent } from './gametime/gametime.component';
      AngularFireModule.initializeApp(environment.firebase),
      AngularFirestoreModule,
   ],
-  providers: [CoursesService],
+  providers: [CoursesService, GameService],
   bootstrap: [AppComponent], 
 })
 export class AppModule {}

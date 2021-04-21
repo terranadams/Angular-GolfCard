@@ -1,7 +1,7 @@
 <h3 *ngIf="!saveComplete" id="courseName"></h3>
 <div id="mobile">Mobile users must tilt phone horizontally</div>
 
-<div *ngIf="!saveComplete dataIn" id="cardStuff1">
+<div *ngIf="!saveComplete && dataIn" id="cardStuff1">
   <div class="row">
     <div class="col-1 leftColumn">HOLE</div>
     <div class="col-1 text-center">1</div>
@@ -115,15 +115,15 @@
   <div *ngFor="let player of gameData.players; let i = index">
         <div class="row inputs">
           <div class="col-1 leftColumn">{{player.name}}</div>
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[0].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[1].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[2].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[3].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[4].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[5].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[6].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[7].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[8].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[0].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[1].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[2].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[3].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[4].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[5].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[6].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[7].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateOut(player)" min="1" [(ngModel)]="player.holes[8].score" class="col-1 text-center inputs">
           <div class="col-1 text-center">{{player.out}}</div>
         </div>
       </div>
@@ -131,7 +131,7 @@
 
 <hr/>
 
-<div *ngIf="!saveComplete dataIn" id="cardStuff2">
+<div *ngIf="!saveComplete && dataIn" id="cardStuff2">
   <div class="row">
     <div class="col-1 leftColumn">HOLE</div>
     <div class="col-1 text-center">10</div>
@@ -245,15 +245,15 @@
   <div *ngFor="let player of gameData.players; let i = index">
         <div class="row inputs">
           <div class="col-1 leftColumn">{{player.name}}</div>
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[9].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[10].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[11].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[12].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[13].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[14].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[15].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[16].score" class="col-1 text-center inputs">
-          <input type="number" (click)="add()" (onblur)="add()" min="1" [(ngModel)]="player.holes[17].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[9].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[10].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[11].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[12].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[13].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[14].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[15].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[16].score" class="col-1 text-center inputs">
+          <input type="number" (ngModelChange)="calculateIn(player)" min="1" [(ngModel)]="player.holes[17].score" class="col-1 text-center inputs">
           <div class="col-1 text-center">{{player.in}}</div>
         </div>
       </div>
