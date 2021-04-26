@@ -27,456 +27,388 @@ export class QuestionsComponent implements OnInit {
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
           {
             score: 0,
-            tapped: false
-          }
-        ,
-        
-          {
-            score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
+          }
+        ,
+        
+          {
+            score: 0,
           }
       ],
       out: 0,
       in: 0,
       total: 0,
-      message: ''
+      message: '',
+      ticker: 0
     }, {
       name: '',
       holes: [
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
           {
             score: 0,
-            tapped: false
-          }
-        ,
-        
-          {
-            score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
+          }
+        ,
+        
+          {
+            score: 0,
           }
       ],
       out: 0,
       in: 0,
       total: 0,
-      message: ''
+      message: '',
+      ticker: 0
     }, {
       name: '',
       holes: [
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
           {
             score: 0,
-            tapped: false
-          }
-        ,
-        
-          {
-            score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
+          }
+        ,
+        
+          {
+            score: 0,
           }
       ],
       out: 0,
       in: 0,
       total: 0,
-      message: ''
+      message: '',
+      ticker: 0
     }, {
       name: '',
       holes: [
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
           {
             score: 0,
-            tapped: false
-          }
-        ,
-        
-          {
-            score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
           }
         ,
         
           {
             score: 0,
-            tapped: false
+          }
+        ,
+        
+          {
+            score: 0,
           }
       ],
       out: 0,
       in: 0,
       total: 0,
-      message: ''
+      message: '',
+      ticker: 0
     }
   ];
 

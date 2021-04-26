@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from '../services/gameData.service';
 import { CoursesService } from '../services/courses.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { throttle } from 'rxjs/operators';
 
 @Component({
   selector: 'app-gametime',
@@ -9,7 +10,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./gametime.component.css'],
 })
 export class GametimeComponent implements OnInit {
-  ticker: number = 0;
+  totalTicker: number = 0;
   gameOver: boolean = false;
   saveComplete: boolean = false;
 
@@ -22,6 +23,8 @@ export class GametimeComponent implements OnInit {
   difficultyNum: number;
   dataIn: boolean = false;
 
+  tapped = [false, false, false, false]
+
   saveToFire(gameData: any) {
     this.db.collection('games-played').add(gameData);
   }
@@ -29,30 +32,40 @@ export class GametimeComponent implements OnInit {
   calculate(player) {
     this.calculateOut(player)
     this.calculateIn(player)
-    this.ticker = 0
+    player.total = player.out + player.in
 
+    player.ticker = 0
     for (let i = 0; i < 18; i++) {
       if (player.holes[i].score > 0) {
-        this.ticker++
+        player.ticker++
+        // console.log(player.ticker)
       }
-      if (this.gameData.players.length == 1 && this.ticker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
-      if (this.gameData.players.length == 2 && this.ticker == 36) this.endGame();
-      if (this.gameData.players.length == 3 && this.ticker == 54) this.endGame();
-      if (this.gameData.players.length == 4 && this.ticker == 72) this.endGame();
     }
+    this.calculateAll()
+    
+  }
+  
+  
+  calculateAll() {
+    this.totalTicker = 0
+    for (let i = 0; i < 4; i++) {
+      this.totalTicker += this.gameData.players[i].ticker
+      // console.log(this.gameData.players[i].ticker)
+      console.log(this.totalTicker)
+    }
+    if (this.gameData.players.length == 1 && this.totalTicker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
+    if (this.gameData.players.length == 2 && this.totalTicker == 36) this.endGame();
+    if (this.gameData.players.length == 3 && this.totalTicker == 54) this.endGame();
+    if (this.gameData.players.length == 4 && this.totalTicker == 72) this.endGame();
   }
 
-  // This function runs every time an input is changed. It runs the math for the totals and checks 
-  // if every input has been filled before displaying the 'finish game' button.
   calculateOut(player): void {
-    player.out = 1;
+    player.out = 0;
     for (let i = 0; i < 9; i++) {
       player.out += player.holes[i].score;
     }    
   }
 
-  // This function runs every time an input is changed. It runs the math for the totals and checks 
-  // if every input has been filled before displaying the 'finish game' button.
   calculateIn(player): void {
     player.in = 0;
     for (let i = 9; i < 18; i++) {
@@ -63,15 +76,21 @@ export class GametimeComponent implements OnInit {
   endGame(): void { // This function displays the scores when the finishGame() button gets rendered after all the inputs are filled
     this.gameOver = true
 
-    this.gameData.players.foreach((player) => {
-      if (player.total > this.parTotal) {
-        player.message = 'Better luck next time!';
-      } else if (player.total == this.parTotal) {
-        player.message = 'Right on Par!';
-      } else {
-        player.message = 'Better luck next time!';
-      }
-    });
+    for (let i = 0; i < this.gameData.players.length; i++) {
+      if (this.gameData.players[i].total > this.parTotal) this.gameData.players[i].message = 'Better luck next time!'
+      else if (this.gameData.players[i].total == this.parTotal) this.gameData.players[i].message = 'Right on Par!'
+      else if (this.gameData.players[i].total < this.parTotal) this.gameData.players[i].message = 'Onto the PGA!!!'
+    }
+
+    // this.gameData.players.foreach((player) => {
+    //   if (player.total > this.parTotal) {
+    //     player.message = 'Better luck next time!';
+    //   } else if (player.total == this.parTotal) {
+    //     player.message = 'Right on Par!';
+    //   } else {
+    //     player.message = 'Onto the PGA!!!';
+    //   }
+    // });
   }
 
   finishGame(): void {
