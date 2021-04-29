@@ -15,6 +15,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @NgModule({
   declarations: [AppComponent, QuestionsComponent, GametimeComponent],
@@ -26,6 +29,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [CoursesService, GameService, FirebaseService],
   bootstrap: [AppComponent],
