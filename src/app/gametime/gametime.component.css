@@ -13,6 +13,13 @@ label {
     font-size: 1.5vw;
     margin: auto
 }
+.link {
+    font-size: 1.5vw;
+    margin: auto
+}
+.spinner {
+    margin: auto auto auto auto
+}
 img {
     display: block;
     margin-left: auto;

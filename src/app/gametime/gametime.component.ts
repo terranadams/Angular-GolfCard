@@ -12,6 +12,7 @@ export class GametimeComponent implements OnInit {
   totalTicker: number = 0;
   gameOver: boolean = false;
   saveComplete: boolean = false;
+  spinner: boolean
 
   yardsTotal = 0;
   handicapTotal = 0;
@@ -115,7 +116,7 @@ export class GametimeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
+      this.spinner = true;
       this.gameData = this.gameService.getGameObject();
       // console.log(this.gameData);
       // console.log(Array.isArray(this.gameData.players))
@@ -129,6 +130,7 @@ export class GametimeComponent implements OnInit {
           this.yardsTotal += x.teeBoxes[this.difficultyNum].yards;
           this.handicapTotal += x.teeBoxes[this.difficultyNum].hcp;
         });
+        this.spinner = false
       });
     // }
   }
