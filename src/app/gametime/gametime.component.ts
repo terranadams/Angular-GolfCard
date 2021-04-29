@@ -102,6 +102,7 @@ export class GametimeComponent implements OnInit {
   }
 
   finishGame(): void {
+    this.gameOver = false
     console.log(this.gameData)
     this.firebase.addGame(this.gameData);
     this.saveComplete = true;

@@ -11,7 +11,7 @@ import { AbstractControl, ValidatorFn } from '@angular/forms';
 })
 export class QuestionsComponent implements OnInit {
   form: boolean = true;
-  duplicateNames: boolean = false;
+  badNames: boolean = false;
   letsPlayButton: boolean = false;
   gimmenames: boolean = false;
   courseID: string;
@@ -24,392 +24,259 @@ export class QuestionsComponent implements OnInit {
     {
       name: '',
       holes: [
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
       ],
       out: 0,
       in: 0,
       total: 0,
       message: '',
-      ticker: 0
-    }, {
+      ticker: 0,
+    },
+    {
       name: '',
       holes: [
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
       ],
       out: 0,
       in: 0,
       total: 0,
       message: '',
-      ticker: 0
-    }, {
+      ticker: 0,
+    },
+    {
       name: '',
       holes: [
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
       ],
       out: 0,
       in: 0,
       total: 0,
       message: '',
-      ticker: 0
-    }, {
+      ticker: 0,
+    },
+    {
       name: '',
       holes: [
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
-        ,
-        
-          {
-            score: 0,
-          }
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
+        {
+          score: 0,
+        },
       ],
       out: 0,
       in: 0,
       total: 0,
       message: '',
-      ticker: 0
-    }
+      ticker: 0,
+    },
   ];
 
   formSubmit(): void {
@@ -433,7 +300,7 @@ export class QuestionsComponent implements OnInit {
           this.gimmenames = true;
         }
       }
-    } 
+    }
   }
 
   inputMaker(n: number): void {
@@ -443,7 +310,6 @@ export class QuestionsComponent implements OnInit {
   }
 
   playerStart: any[] = [];
-  
 
   checkNames(): void {
     // console.log(Array.isArray(this.playerStart))
@@ -454,13 +320,21 @@ export class QuestionsComponent implements OnInit {
 
     if (this.playerStart.length == 1) this.letsPlay();
     if (this.playerStart.length == 2) {
-      if (this.playerStart[0].name != this.playerStart[1].name) this.letsPlay();
+      if (
+        this.playerStart[0].name != this.playerStart[1].name &&
+        this.playerStart[0].name != '' &&
+        this.playerStart[1].name != ''
+      )
+        this.letsPlay();
     }
     if (this.playerStart.length == 3) {
       if (
         this.playerStart[0].name != this.playerStart[1].name &&
         this.playerStart[0].name != this.playerStart[2].name &&
-        this.playerStart[1].name != this.playerStart[2].name
+        this.playerStart[1].name != this.playerStart[2].name &&
+        this.playerStart[0].name != '' &&
+        this.playerStart[1].name != '' &&
+        this.playerStart[2].name != ''
       )
         this.letsPlay();
     }
@@ -471,11 +345,15 @@ export class QuestionsComponent implements OnInit {
         this.playerStart[0].name != this.playerStart[3].name &&
         this.playerStart[1].name != this.playerStart[2].name &&
         this.playerStart[1].name != this.playerStart[3].name &&
-        this.playerStart[2].name != this.playerStart[3].name
+        this.playerStart[2].name != this.playerStart[3].name &&
+        this.playerStart[0].name != '' &&
+        this.playerStart[1].name != '' &&
+        this.playerStart[2].name != '' &&
+        this.playerStart[3].name != ''
       )
         this.letsPlay();
     } else {
-      this.duplicateNames = true;
+      this.badNames = true;
       this.playerStart = [];
     }
   }
