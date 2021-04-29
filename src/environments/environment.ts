@@ -5,12 +5,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDB-vSGWfNkJpI9jSA7t6rLzTQ3VTr5kwY',
-    authDomain: 'golfscore-app.firebaseapp.com',
-    projectId: 'golfscore-app',
-    storageBucket: 'golfscore-app.appspot.com',
-    messagingSenderId: '74526527110',
-    appId: '1:74526527110:web:eb019a942c3f4cb733cb07',
+    apiKey: 'AIzaSyBDoofhNOzoJcYHg0AIKvQDtxaiXV6mssI',
+    authDomain: 'golfscore-app-ad248.firebaseapp.com',
+    projectId: 'golfscore-app-ad248',
+    storageBucket: 'golfscore-app-ad248.appspot.com',
+    messagingSenderId: '891988601760',
+    appId: '1:891988601760:web:6a093b2036a1a7e14492c5',
   },
 };
 

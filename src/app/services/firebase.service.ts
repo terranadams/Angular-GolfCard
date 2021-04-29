@@ -13,14 +13,15 @@ import { Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class FirebaseService {
-  gamesCollection: AngularFirestoreCollection<any>
   games: Observable<any[]>;
+  gamesCollection: AngularFirestoreCollection<any>
 
   constructor(public afs: AngularFirestore) { 
     this.games = this.afs.collection('games').valueChanges();
+    this.gamesCollection = this.afs.collection('games')
   }
 
-  addUser(x) {
+  addGame(x) {
     this.gamesCollection.add(x)
   }
 }

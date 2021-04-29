@@ -9,11 +9,12 @@ import { QuestionsComponent } from './questions/questions.component';
 import { GametimeComponent } from './gametime/gametime.component';
 import { GameService } from './services/gameData.service';
 
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [AppComponent, QuestionsComponent, GametimeComponent],
