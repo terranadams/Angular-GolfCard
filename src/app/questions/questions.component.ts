@@ -433,7 +433,7 @@ export class QuestionsComponent implements OnInit {
           this.gimmenames = true;
         }
       }
-    }
+    } 
   }
 
   inputMaker(n: number): void {
@@ -442,9 +442,12 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  playerStart: Player[] = [];
+  playerStart: any[] = [];
+  
 
   checkNames(): void {
+    // console.log(Array.isArray(this.playerStart))
+    // console.log(typeof this.playerStart)
     this.playerStart = this.playersArray.filter((x) => {
       return x.name !== '';
     });

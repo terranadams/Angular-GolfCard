@@ -38,8 +38,14 @@ export class GametimeComponent implements OnInit {
     for (let i = 0; i < 18; i++) {
       if (player.holes[i].score > 0) {
         player.ticker++
-        // console.log(player.ticker)
       }
+      // console.log("All tickers")
+      // console.log(typeof this.gameData.players)
+      // this.gameData.players.array.forEach(x => {
+      //   console.log(x.ticker)
+      // });
+      // console.log('This player\'s ticker')
+      // console.log(player.ticker)
     }
     this.calculateAll()
     
@@ -48,11 +54,14 @@ export class GametimeComponent implements OnInit {
   
   calculateAll() {
     this.totalTicker = 0
-    for (let i = 0; i < 4; i++) {
-      this.totalTicker += this.gameData.players[i].ticker
-      // console.log(this.gameData.players[i].ticker)
-      console.log(this.totalTicker)
-    }
+    console.log(this.gameData)
+    console.log(this.gameData.players)
+    console.log(this.gameData.players[1].ticker)
+    // for (let i = 0; i < 4; i++) {
+      // console.log(this.gameData)
+      // this.totalTicker += this.gameData.players[i].ticker
+      // console.log(`Total boxes clicked / ticker ${this.totalTicker}`)
+    // }
     if (this.gameData.players.length == 1 && this.totalTicker == 18) this.endGame(); // These are used for the program to know when to let the user end the game.
     if (this.gameData.players.length == 2 && this.totalTicker == 36) this.endGame();
     if (this.gameData.players.length == 3 && this.totalTicker == 54) this.endGame();
@@ -82,15 +91,6 @@ export class GametimeComponent implements OnInit {
       else if (this.gameData.players[i].total < this.parTotal) this.gameData.players[i].message = 'Onto the PGA!!!'
     }
 
-    // this.gameData.players.foreach((player) => {
-    //   if (player.total > this.parTotal) {
-    //     player.message = 'Better luck next time!';
-    //   } else if (player.total == this.parTotal) {
-    //     player.message = 'Right on Par!';
-    //   } else {
-    //     player.message = 'Onto the PGA!!!';
-    //   }
-    // });
   }
 
   finishGame(): void {
@@ -106,7 +106,9 @@ export class GametimeComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameData = this.gameService.getGameObject();
-    console.log(this.gameData);
+    // console.log(this.gameData);
+    // console.log(Array.isArray(this.gameData.players))
+    // console.log(typeof this.gameData.players)
     this.difficultyNum = this.gameData.difficultyNum;
     this.coursesService.getCourse(this.gameData.course).subscribe((x) => {
       this.courseData = x;
@@ -115,7 +117,7 @@ export class GametimeComponent implements OnInit {
         this.parTotal += x.teeBoxes[this.difficultyNum].par;
         this.yardsTotal += x.teeBoxes[this.difficultyNum].yards;
         this.handicapTotal += x.teeBoxes[this.difficultyNum].hcp;
-      });
+      }); 
     });
   }
 }

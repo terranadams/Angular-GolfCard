@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { Player } from '../interfaces/player';
 @Injectable({
     providedIn: 'root',
   })
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http'
 
     constructor(private http: HttpClient) {}
 
-    gameObject: any 
+    gameObject: Player
 
     getGameObject() {
       return this.gameObject
