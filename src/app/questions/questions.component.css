@@ -3,10 +3,10 @@
     border: solid 1px rgb(193, 230, 31);
 }
 label {
-    color: rgb(193, 230, 31)
+    color: rgb(32, 200, 241)
 }
 #cardStuff1, #cardStuff2 {
-    background-color: rgb(165, 184, 129);
+    background-color: rgb(32, 200, 241);
 }
 .err {
     color: red;
@@ -17,7 +17,7 @@ label {
     margin: auto
 }
 #firstHeader {
-    color: rgb(193, 230, 31);
+    color: rgb(32, 200, 241);
 }
 
 #mobile {

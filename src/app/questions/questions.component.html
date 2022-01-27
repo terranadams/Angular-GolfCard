@@ -1,9 +1,9 @@
-<h2 id="firstHeader">Lets play some Golf!</h2>
+<h2 id="firstHeader" style='margin: 20px;'>Lets play some Golf!</h2>
 
 <div *ngIf="form">
 <div>
-  <label>Choose a course:</label>
-  <select required [(ngModel)]="courseID" class="form-control col-6" [ngModelOptions]="{standalone: true}">
+  <label style='margin: 10px;'>Choose a course:</label>
+  <select required [(ngModel)]="courseID" style='margin: 20px;' class="form-control col-3" [ngModelOptions]="{standalone: true}">
     <option value="18300">Fox Hollow</option>
     <option value="11819">Thanksgiving Point</option>
     <option value="19002">Spanish Oaks</option>
@@ -11,8 +11,8 @@
 </div>
 <br>
 <div>
-  <label>Select difficulty</label>
-  <select required [(ngModel)]="difficulty" class="form-control col-4" [ngModelOptions]="{standalone: true}">
+  <label style='margin: 10px;'>Select difficulty</label>
+  <select required [(ngModel)]="difficulty" style='margin: 20px;' class="form-control col-3" [ngModelOptions]="{standalone: true}">
     <option value="champion">Champion</option>
     <option value="pro">Pro (Champion if Spanish Oaks)</option>
     <option value="men">Men</option>
@@ -21,14 +21,14 @@
 </div>
 <br>
 <div>
-  <label>How many players are playing?</label>
-  <select required [(ngModel)]="numberOfPlayersSelection" class="form-control col-2" [ngModelOptions]="{standalone: true}">
+  <label style='margin: 10px;'>How many players are playing?</label>
+  <select required [(ngModel)]="numberOfPlayersSelection" style='margin: 20px;' class="form-control col-3" [ngModelOptions]="{standalone: true}">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
   </select>
-  <button class="btn btn-success" (click)="formSubmit()">Continue</button>
+  <button class="btn btn-primary" style='margin: 20px;' (click)="formSubmit()">Continue</button>
 </div>
 </div>
 
@@ -38,14 +38,14 @@
   <label>Gimme names:</label>
   <h6 *ngIf="badNames" class="err">No empty fields, and no duplicate names homie</h6>
   <div *ngFor="let number of playerCountArray; let i = index" [attr.data-index]="i">
-    <input type="text" required [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
+    <input type="text" style='margin: 20px;' required [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
   </div>
   
-  <button type="submit" (click)="checkNames()">Everybody ready?</button>
+  <button type="submit" style='margin: 20px' class="btn btn-primary" (click)="checkNames()">Everybody ready?</button>
 </div>
 
 <a routerLink="gametime" routerLinkActive="active">
-<button *ngIf="letsPlayButton" (click)="beginGame()">Let's Play!</button>
+<button *ngIf="letsPlayButton" class="btn btn-primary" style='margin: 20px;' (click)="beginGame()">Let's Play!</button>
 </a>  
 
 <router-outlet></router-outlet>
