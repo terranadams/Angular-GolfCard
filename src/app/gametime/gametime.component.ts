@@ -17,7 +17,6 @@ export class GametimeComponent implements OnInit {
   yardsTotal = 0;
   handicapTotal = 0;
   parTotal = 0;
-
   gameData: any;
   courseData: any;
   difficultyNum: number;
@@ -53,7 +52,6 @@ export class GametimeComponent implements OnInit {
     }
     this.calculateAll();
   }
-
 
 
   calculateAll() {
@@ -124,6 +122,8 @@ export class GametimeComponent implements OnInit {
       this.difficultyNum = this.gameData.difficultyNum;
       this.coursesService.getCourse(this.gameData.course).subscribe((x) => {
         this.courseData = x;
+        console.log(this.courseData)
+
         this.dataIn = true;
         this.courseData.data.holes.forEach((x) => {
           this.parTotal += x.teeBoxes[this.difficultyNum].par;

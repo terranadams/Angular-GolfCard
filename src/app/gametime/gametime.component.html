@@ -1,4 +1,4 @@
-<h3 *ngIf="!saveComplete" id="courseName"></h3>
+<h3 *ngIf="!saveComplete" id="courseName" style='color:rgb(0, 246, 238)'>{{courseData.data.name | json}}</h3>
 <div id="mobile">Mobile users must tilt phone horizontally</div>
 
 <div *ngIf="spinner" class="spinner">
@@ -397,14 +397,14 @@
 </div>
 
 <div *ngIf="gameOver">
-  <div class="row totals">
-    <div *ngFor="let player of gameData.players; let i = index">
+  <div *ngFor="let player of gameData.players; let i = index">
+      <div class="row totals">
       <span class="col-3">{{ player.name }}</span>
       <span class="col-3">Final Score: {{ player.total }}</span>
       <span class="col-6">{{ player.message }}</span>
     </div>
   </div>
-  <button (click)="finishGame()">Save Game Results to Firebase :)</button>
+  <button class='btn btn-primary' style='margin: 5px' (click)="finishGame()">Save Game Results to Firebase :)</button>
 </div>
 
 <div *ngIf="saveComplete">

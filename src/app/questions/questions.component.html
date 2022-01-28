@@ -35,7 +35,7 @@
 
 
 <div *ngIf="gimmenames">
-  <label>Gimme names:</label>
+  <label style='margin-left: 20px'>Gimme names:</label>
   <h6 *ngIf="badNames" class="err">No empty fields, and no duplicate names homie</h6>
   <div *ngFor="let number of playerCountArray; let i = index" [attr.data-index]="i">
     <input type="text" style='margin: 20px;' required [(ngModel)]="playersArray[i].name" (keyup.enter)="checkNames()" />
